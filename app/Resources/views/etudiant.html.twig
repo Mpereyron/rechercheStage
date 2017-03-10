@@ -1,0 +1,45 @@
+
+
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="col-md-6">
+        {{ form_start(etudiantForm) }}
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td>
+                        {{ form_row(etudiantForm.name, {'label': 'Nom ', 'value': etudiant.nom }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ form_row(etudiantForm.firstName, {'label': 'Prenom ', 'value': etudiant.prenom }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ form_row(etudiantForm.email, {'label': 'Email ', 'value': etudiant.email }) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ form_row(etudiantForm.CV, {'label': 'CV '}) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      {{ form_row(etudiantForm.btnModif, {'label': 'Valider '}) }}
+                        {{ form_widget(etudiantForm._token) }}
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="form-group">
+
+        </div>
+    </div>
+{% endblock %}

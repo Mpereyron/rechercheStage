@@ -51,6 +51,10 @@ class ComposerStaticInitd44fc61b89e2fba85b9a83682a281ca8
         array (
             'Monolog\\' => 8,
         ),
+        'K' => 
+        array (
+            'Knp\\DoctrineBehaviors\\' => 22,
+        ),
         'I' => 
         array (
             'Incenteev\\ParameterHandler\\' => 27,
@@ -150,6 +154,10 @@ class ComposerStaticInitd44fc61b89e2fba85b9a83682a281ca8
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Knp\\DoctrineBehaviors\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/doctrine-behaviors/src',
+        ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
@@ -220,6 +228,13 @@ class ComposerStaticInitd44fc61b89e2fba85b9a83682a281ca8
             'Doctrine\\Common\\Annotations\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
+            ),
+        ),
+        'B' => 
+        array (
+            'Behat\\Transliterator' => 
+            array (
+                0 => __DIR__ . '/..' . '/behat/transliterator/src',
             ),
         ),
     );
