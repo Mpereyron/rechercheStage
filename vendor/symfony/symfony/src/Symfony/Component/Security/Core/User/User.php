@@ -12,7 +12,7 @@
 namespace Symfony\Component\Security\Core\User;
 
 /**
- * User is the user implementation used by the in-memory user provider.
+ * Model is the user implementation used by the in-memory user provider.
  *
  * This should not be used for anything else.
  *

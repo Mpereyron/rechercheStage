@@ -7,6 +7,6 @@ parameters:
     database_password: null
     mailer_transport: smtp
     mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
+    mailer_user: symfony
+    mailer_password: symfony
     secret: 7b61c8830252a972c4be6bac3c4b0df7cc9fc8ed

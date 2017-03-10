@@ -334,7 +334,7 @@ class MainConfiguration implements ConfigurationInterface
                                 ),
                             ),
                         ),
-                        'my_entity_provider' => array('entity' => array('class' => 'SecurityBundle:User', 'property' => 'username')),
+                        'my_entity_provider' => array('entity' => array('class' => 'SecurityBundle:Model', 'property' => 'username')),
                     ))
                     ->isRequired()
                     ->requiresAtLeastOneElement()

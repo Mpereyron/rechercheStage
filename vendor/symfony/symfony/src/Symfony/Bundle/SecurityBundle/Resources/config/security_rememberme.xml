@@ -17,14 +17,14 @@
         </service>
 
         <service id="security.authentication.provider.rememberme" class="Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider" abstract="true" public="false">
-            <argument /> <!-- User Checker -->
+            <argument /> <!-- Model Checker -->
         </service>
 
         <service id="security.rememberme.token.provider.in_memory" class="Symfony\Component\Security\Core\Authentication\RememberMe\InMemoryTokenProvider" public="false" />
 
         <service id="security.authentication.rememberme.services.abstract" abstract="true" public="false">
             <tag name="monolog.logger" channel="security" />
-            <argument type="collection" /> <!--  User Providers -->
+            <argument type="collection" /> <!--  Model Providers -->
             <argument /> <!-- Shared Token Key -->
             <argument /> <!-- Shared Provider Key -->
             <argument type="collection" /> <!-- Options -->

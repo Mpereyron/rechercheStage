@@ -133,11 +133,11 @@ abstract class AbstractRememberMeServices implements RememberMeServicesInterface
             throw $e;
         } catch (UsernameNotFoundException $e) {
             if (null !== $this->logger) {
-                $this->logger->info('User for remember-me cookie not found.');
+                $this->logger->info('Model for remember-me cookie not found.');
             }
         } catch (UnsupportedUserException $e) {
             if (null !== $this->logger) {
-                $this->logger->warning('User class for remember-me cookie not supported.');
+                $this->logger->warning('Model class for remember-me cookie not supported.');
             }
         } catch (AuthenticationException $e) {
             if (null !== $this->logger) {

@@ -36,7 +36,7 @@ class UserPasswordEncoderCommand extends ContainerAwareCommand
             ->setName('security:encode-password')
             ->setDescription('Encodes a password.')
             ->addArgument('password', InputArgument::OPTIONAL, 'The plain password to encode.')
-            ->addArgument('user-class', InputArgument::OPTIONAL, 'The User entity class path associated with the encoder used to encode the password.', 'Symfony\Component\Security\Core\User\User')
+            ->addArgument('user-class', InputArgument::OPTIONAL, 'The Model entity class path associated with the encoder used to encode the password.', 'Symfony\Component\Security\Core\User\User')
             ->addOption('empty-salt', null, InputOption::VALUE_NONE, 'Do not generate a salt or let the encoder generate one.')
             ->setHelp(<<<EOF
 
@@ -51,11 +51,11 @@ Suppose that you have the following security configuration in your application:
 # app/config/security.yml
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
-        AppBundle\Entity\User: bcrypt
+        Symfony\Component\Security\Core\Model\Model: plaintext
+        AppBundle\Entity\Model: bcrypt
 </comment>
 
-If you execute the command non-interactively, the default Symfony User class
+If you execute the command non-interactively, the default Symfony Model class
 is used and a random salt is generated to encode the password:
 
   <info>php %command.full_name% --no-interaction [password]</info>
@@ -63,16 +63,16 @@ is used and a random salt is generated to encode the password:
 Pass the full user class path as the second argument to encode passwords for
 your own entities:
 
-  <info>php %command.full_name% --no-interaction [password] AppBundle\Entity\User</info>
+  <info>php %command.full_name% --no-interaction [password] AppBundle\Entity\Model</info>
 
 Executing the command interactively allows you to generate a random salt for
 encoding the password:
 
-  <info>php %command.full_name% [password] AppBundle\Entity\User</info>
+  <info>php %command.full_name% [password] AppBundle\Entity\Model</info>
 
 In case your encoder doesn't require a salt, add the <comment>empty-salt</comment> option:
 
-  <info>php %command.full_name% --empty-salt [password] AppBundle\Entity\User</info>
+  <info>php %command.full_name% --empty-salt [password] AppBundle\Entity\Model</info>
 
 EOF
             )

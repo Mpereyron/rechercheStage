@@ -89,7 +89,7 @@ class DigestAuthenticationListener implements ListenerInterface
             $user = $this->provider->loadUserByUsername($digestAuth->getUsername());
 
             if (null === $user) {
-                throw new AuthenticationServiceException('Digest User provider returned null, which is an interface contract violation');
+                throw new AuthenticationServiceException('Digest Model provider returned null, which is an interface contract violation');
             }
 
             $serverDigestMd5 = $digestAuth->calculateServerDigest($user->getPassword(), $request->getMethod());
