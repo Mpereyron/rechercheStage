@@ -1,0 +1,8 @@
+# Cache
+/var/bootstrap.php.cache
+/var/cache/*
+!var/cache/.gitkeep
+
+# Dependencies and package managers
+/vendor/*
+composer.phar

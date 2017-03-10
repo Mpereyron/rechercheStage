@@ -252,7 +252,7 @@ class YamlFileLoaderTest extends \PHPUnit_Framework_TestCase
         $loader->load('services21.yml');
 
         $definition = $container->getDefinition('manager');
-        $this->assertEquals(array(array('setLogger', array(new Reference('logger'))), array('setClass', array('User'))), $definition->getMethodCalls());
+        $this->assertEquals(array(array('setLogger', array(new Reference('logger'))), array('setClass', array('Model'))), $definition->getMethodCalls());
         $this->assertEquals(array(true), $definition->getArguments());
         $this->assertEquals(array('manager' => array(array('alias' => 'user'))), $definition->getTags());
     }

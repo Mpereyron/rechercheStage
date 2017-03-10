@@ -19,9 +19,9 @@
                  public="false"
             >
             <argument /> <!-- Simple Authenticator -->
-            <argument /> <!-- User Provider -->
+            <argument /> <!-- Model Provider -->
             <argument /> <!-- Provider-shared Key -->
-            <argument /> <!-- User Checker -->
+            <argument /> <!-- Model Checker -->
         </service>
 
         <service id="security.authentication.listener.guard"

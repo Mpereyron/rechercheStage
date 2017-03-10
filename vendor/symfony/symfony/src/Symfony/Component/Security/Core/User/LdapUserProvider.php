@@ -72,14 +72,14 @@ class LdapUserProvider implements UserProviderInterface
             $query = str_replace('{username}', $username, $this->defaultSearch);
             $search = $this->ldap->query($this->baseDn, $query);
         } catch (ConnectionException $e) {
-            throw new UsernameNotFoundException(sprintf('User "%s" not found.', $username), 0, $e);
+            throw new UsernameNotFoundException(sprintf('Model "%s" not found.', $username), 0, $e);
         }
 
         $entries = $search->execute();
         $count = count($entries);
 
         if (!$count) {
-            throw new UsernameNotFoundException(sprintf('User "%s" not found.', $username));
+            throw new UsernameNotFoundException(sprintf('Model "%s" not found.', $username));
         }
 
         if ($count > 1) {

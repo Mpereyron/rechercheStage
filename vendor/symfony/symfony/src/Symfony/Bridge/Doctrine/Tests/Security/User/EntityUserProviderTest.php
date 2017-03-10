@@ -81,7 +81,7 @@ class EntityUserProviderTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage You must either make the "Symfony\Bridge\Doctrine\Tests\Fixtures\User" entity Doctrine Repository ("Doctrine\ORM\EntityRepository") implement "Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface" or set the "property" option in the corresponding entity provider configuration.
+     * @expectedExceptionMessage You must either make the "Symfony\Bridge\Doctrine\Tests\Fixtures\Model" entity Doctrine Repository ("Doctrine\ORM\EntityRepository") implement "Symfony\Bridge\Doctrine\Security\Model\UserLoaderInterface" or set the "property" option in the corresponding entity provider configuration.
      */
     public function testLoadUserByUsernameWithNonUserLoaderRepositoryAndWithoutProperty()
     {
@@ -126,7 +126,7 @@ class EntityUserProviderTest extends \PHPUnit_Framework_TestCase
         $user2 = new User(1, 2, 'user2');
         $this->setExpectedException(
             'Symfony\Component\Security\Core\Exception\UsernameNotFoundException',
-            'User with id {"id1":1,"id2":2} not found'
+            'Model with id {"id1":1,"id2":2} not found'
         );
         $provider->refreshUser($user2);
     }

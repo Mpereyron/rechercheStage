@@ -47,7 +47,7 @@ class InMemoryUserProvider implements UserProviderInterface
     }
 
     /**
-     * Adds a new User to the provider.
+     * Adds a new Model to the provider.
      *
      * @param UserInterface $user A UserInterface instance
      *
