@@ -6,3 +6,5 @@ etudiant:
     resource: "@AppBundle/Controller/etudiantController.php"
     prefix:   /
     type:     annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
