@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Détails annonce{% endblock %}
+
+{% block body %}
+
+    <h1>{{ announce.subject }}</h1>
+    <p>{{ announce.description }}</p>
+
+    <p>{{ announce.tutor.firstname }}{{ announce.tutor.lastname }}</p>
+
+
+    <a href="">Contacter le tuteur</a>
+
+
+    <a href="">Postuler pour l'annonce</a>
+
+    <!-- <span>Vous avez deja postulé pour cette annonce</span>-->
+{% endblock %}

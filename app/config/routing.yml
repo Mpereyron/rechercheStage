@@ -1,4 +1,19 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+company_profil:
+    path:  /company/details/{id}
+    defaults:  { _controller: AppBundle:Company:profil}
 
+company_add:
+    path:  /company/add
+    defaults:  { _controller: AppBundle:Company:add}
+
+announce_list:
+    path:  /announce
+    defaults:  { _controller: AppBundle:Announce:list}
+
+announce_profil:
+    path:  /announce/details/{id}
+    defaults:  { _controller: AppBundle:Announce:profil}
+
+announce_add:
+    path:  /announce/add
+    defaults:  { _controller: AppBundle:Announce:add}

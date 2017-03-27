@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <table>
+        <thead>
+        <tr>
+            <th>Sujet</th>
+            <th>Description</th>
+            <th>Détails</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for announce in announces %}
+            <tr>
+                <td>{{ announce.subject }}</td>
+                <td>{{ announce.description }}</td>
+                <td><a href="{{ path('announce_profil', { 'id': announce.id }) }}"></a>OUIN</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

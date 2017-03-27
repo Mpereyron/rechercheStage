@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Entreprise : ajout {% endblock %}
+
+{% block body %}
+    {{ form_start(companyType, {'action': path('company_add')}) }}
+
+    {{ form_label(companyType.name) }}
+    {{ form_widget(companyType.name) }}
+
+    {{ form_label(companyType.description) }}
+    {{ form_widget(companyType.description) }}
+
+    {{ form_label(companyType.logo) }}
+    {{ form_widget(companyType.logo) }}
+
+    {{ form_label(companyType.location) }}
+    {{ form_widget(companyType.location) }}
+
+    {{ form_label(companyType.domain) }}
+    {{ form_widget(companyType.domain) }}
+
+    {{ form_widget(companyType.create) }}
+    {{ form_rest(companyType) }}
+{% endblock %}

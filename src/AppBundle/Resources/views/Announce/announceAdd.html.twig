@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Annonce : Ajout{% endblock %}
+
+{% block body %}
+    {{ form_start(announceType, {'action': path('announce_add')}) }}
+
+    {{ form_label(announceType.subject) }}
+    {{ form_widget(announceType.subject) }}
+
+    {{ form_label(announceType.description) }}
+    {{ form_widget(announceType.description) }}
+
+    {{ form_widget(announceType.create) }}
+    {{ form_rest(announceType) }}
+{% endblock %}
+
