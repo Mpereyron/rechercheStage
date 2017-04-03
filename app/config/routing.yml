@@ -25,3 +25,8 @@ announce_erase:
 anounce_update:
       path:  /announce/update/{id}
       defaults:  { _controller: AppBundle:Announce:update}
+
+anounce_apply:
+      path:  /announce/apply/{id}
+      defaults:  { _controller: AppBundle:Announce:apply}
+

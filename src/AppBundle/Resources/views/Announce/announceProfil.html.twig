@@ -10,10 +10,7 @@
     <p>{{ announce.tutor.firstname }}{{ announce.tutor.lastname }}</p>
 
 
-    <a href="">Contacter le tuteur</a>
-
-
-    <a href="">Postuler pour l'annonce</a>
+    <a href="{{ path('announce_apply') }}">Postuler pour l'annonce</a>
 
     <!-- <span>Vous avez deja postulé pour cette annonce</span>-->
 {% endblock %}

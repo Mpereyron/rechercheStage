@@ -43,7 +43,7 @@ class AnnounceController extends Controller
                 $em->persist($announce);
                 $em->flush();
 
-                return new RedirectResponse('/announce/'.$announce->getId());
+                return new RedirectResponse('/announce/' . $announce->getId());
             }
 
 
@@ -101,11 +101,13 @@ class AnnounceController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->flush();
 
-                return new RedirectResponse('/announce/'.$announce->getId());
+                return new RedirectResponse('/announce/' . $announce->getId());
             }
 
         }
         return $this->render('@App/Announce/announceAdd.html.twig',
             ['announceType' => $form->createView()]);
     }
+
+
 }
