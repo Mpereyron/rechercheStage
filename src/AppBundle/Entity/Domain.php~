@@ -70,14 +70,6 @@ class Domain
     }
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->companies = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
      * Add company
      *
      * @param \AppBundle\Entity\Company $company
@@ -110,6 +102,12 @@ class Domain
     {
         return $this->companies;
     }
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->companies = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 }

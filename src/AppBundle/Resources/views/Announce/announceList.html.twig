@@ -16,8 +16,8 @@
         {% for announce in announces %}
             <tr>
                 <td>{{ announce.subject }}</td>
-                <td>{{ announce.description }}</td>
-                <td><a href="{{ path('announce_profil', { 'id': announce.id }) }}"></a>OUIN</td>
+                <td>{{ announce.description[:20] }}</td>
+                <td><a href="{{ path('announce_profil', { 'id': announce.id }) }}">Détails</a></td>
             </tr>
         {% endfor %}
         </tbody>

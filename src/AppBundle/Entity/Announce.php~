@@ -47,7 +47,7 @@ class Announce
      *
      * @ORM\Column(name="status", type="string", length=255, options={"default" : "En cours"})
      */
-    private $status = "En cours" ;
+    private $status ;
 
 
     /**

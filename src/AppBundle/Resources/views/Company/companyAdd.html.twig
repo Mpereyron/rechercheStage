@@ -3,6 +3,7 @@
 {% block title %}Entreprise : ajout {% endblock %}
 
 {% block body %}
+
     {{ form_start(companyType, {'action': path('company_add')}) }}
 
     {{ form_label(companyType.name) }}
@@ -14,8 +15,17 @@
     {{ form_label(companyType.logo) }}
     {{ form_widget(companyType.logo) }}
 
-    {{ form_label(companyType.location) }}
-    {{ form_widget(companyType.location) }}
+    {{ form_label(companyType.location.country) }}
+    {{ form_widget(companyType.location.country) }}
+
+    {{ form_label(companyType.location.city) }}
+    {{ form_widget(companyType.location.city) }}
+
+    {{ form_label(companyType.location.street) }}
+    {{ form_widget(companyType.location.street) }}
+
+    {{ form_label(companyType.location.postalCode) }}
+    {{ form_widget(companyType.location.postalCode) }}
 
     {{ form_label(companyType.domain) }}
     {{ form_widget(companyType.domain) }}

@@ -6,6 +6,7 @@ use AppBundle\Entity\Company;
 use AppBundle\Forms\CompanyType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 
 class CompanyController extends Controller
@@ -17,8 +18,13 @@ class CompanyController extends Controller
             ->getRepository('AppBundle:Company')
             ->find($companyId);
 
+        $announces =  $this->getDoctrine()
+            ->getRepository('AppBundle:Company')
+            ->findAllAnnounce($companyId);
+
         return $this->render('@App/Company/companyProfil.html.twig', [
             'company' => $company,
+            'announces' => $announces,
         ]);
     }
 
@@ -30,15 +36,15 @@ class CompanyController extends Controller
 
             $form->handleRequest($request);
 
-            if ($form->isSubmitted() && $form->isValid()) {
+           if ($form->isSubmitted() && $form->isValid()) {
 
                 $company = $form->getData();
-                var_dump($company);
+
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($company);
                 $em->flush();
 
-                return new RedirectResponse('/company/details/' . $company->getId());
+               return new RedirectResponse('/company/details/' . $company->getId());
             }
         }
 

@@ -1,21 +1,31 @@
 {% extends '::base.html.twig' %}
 
-{% block title %}Profile{% endblock %}
+{% block title %}Profile Entreprise{% endblock %}
 
 {% block body %}
 
-        <h2>Votre Entreprise </h2>
+    <h2>Votre Entreprise </h2>
 
-        <p>Nom de société : {{ company.name }}</p>
-        <p>Description : {{ company.description }}</p>
-        <p>Domaine : {{ company.domain.name }}</p>
-        <p>Lieu : {{ company.location.country }}</p>
+    <p>Nom de société : {{ company.name }}</p>
+    <p>Description : {{ company.description }}</p>
+    <p>Domaine : {{ company.domain.name }}</p>
+    <p>Lieu : {{ company.location.country }} {{ company.location.city }} {{ company.location.street}} {{ company.location.postalCode }}</p>
 
-    <a href="">Ajouter</a>
+
+
 
     <h2>Annonces de l'entreprise :</h2>
+
+    <a href="{{ path('announce_add') }}">Ajouter une announce </a>
+
     <ul>
-        <li>Annonce 1 <a href="">Modifier </a> <a href="">Supprimer </a></li>
+        {% for announce in announces %}
+            <li>
+                {{ announce.subject }}
+                <a href="{{ path('announce_profil', { 'id': announce.id }) }}">Détails </a>
+                <a href="{{ path('announce_erase', { 'id': announce.id }) }}">Supprimer </a>
+            </li>
+        {% endfor %}
     </ul>
 
 {% endblock %}
