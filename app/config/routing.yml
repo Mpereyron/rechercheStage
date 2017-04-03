@@ -1,3 +1,7 @@
+tutor_profil:
+    path:  /tutor/{id}
+    defaults:  { _controller: AppBundle:Tutor:profil}
+
 company_add:
     path:  /company/add
     defaults:  { _controller: AppBundle:Company:add}
